@@ -86,8 +86,7 @@ export async function init(root?: string) {
             // if value is undefined it will be handled as root.
             if (value === undefined) return undefined
 
-            const resolvedRoot = path.resolve(results.root)
-            if (!isPathInside(resolvedRoot, value))
+            if (!isPathInside(results.root, value))
               return `\`srcDir\` must be in \`root\`(${results.root})`
 
             return undefined
